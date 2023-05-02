@@ -1,3 +1,25 @@
+# How to run the existing code on MacOS
+
+## (optional) step 1: generate curve files
+note: I met a `java.lang.NoClassDefFoundError: cern/colt/matrix/DoubleMatrix2D` error when running this on my Mac (M1), but the bug disappears in a Linux environment.
+
+1. install java: https://www.java.com/en/download/ 
+2. make an output directory, e.g., `mkdir test-output`
+3. go to the server folder: `cd server`
+4. run `java -jar foldSimilarityMatrix.jar ../test-data ../test-output`
+5. copy curve files to the client directory: `cp ../test-output/0226-T3_curves.curve ../client/timecurves/example-session`
+
+
+## step 2: display the visualization
+1. install php: `brew install php` 
+2. make sure php is installed: `php -v`
+2. go to the client folder: `cd client`
+3. start the php server: `php -S localhost:8080`
+4. go to [localhost:8080](http://localhost:8080/) and you should be able to see the curve visualization
+
+*************************************************
+
+
 # Time curves
 
 Time curves are a visualization for temporal data, explained in detail here: www.aviz.fr/~bbach/timecurves. 
