@@ -82,13 +82,13 @@ session_start();
 	var dir = 'example-session'
 
 	d3.json('getCurves.php?dir=' + dir, function(data) {
-		console.log(data);
+		//console.log(data);
         for(var i=0 ; i<data.length ; i++){
             if(data[i].indexOf('.curve') == -1) continue
             	// console.log('list[i]')
 			DATASETS.push(dir + '/'+ data[i])
 		}
-		console.log(DATASETS)
+		
 
 		DATASETS.forEach(function(d){
 			// load(d)

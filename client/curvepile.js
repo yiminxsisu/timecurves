@@ -7,7 +7,6 @@
 
 
 function CurvePile(file, id, isGallery, elementId) {
-
     // width of slider to turn curve into timeline
     var SLIDER_WIDTH = SIZE/3
 
@@ -408,7 +407,11 @@ function CurvePile(file, id, isGallery, elementId) {
         var curve = this.curves[0];
         var name = curve.name.split('.')[0]
         var _this = this
-        name = name.charAt(0).toUpperCase() + name.slice(1);
+        //name = name.charAt(0).toUpperCase() + name.slice(1);
+        //console.log("file");
+        //console.log(this.file);
+        fileArr = this.file.split('/')
+        name = fileArr[fileArr.length - 1].replace(".curve", "");
 
         this.div.append('text')
             .attr('x', 0)
@@ -1027,7 +1030,6 @@ function CurvePile(file, id, isGallery, elementId) {
         dump += '</svg>'
 
         var outfile = this.curves[0].name.split('.')[0]
-        console.log(outfile)
         var textFileAsBlob = new Blob([dump], {
             type: 'text/text'
         });
